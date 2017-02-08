@@ -9,6 +9,35 @@ package edd_practica1_201313692;
  *
  * @author jossie
  */
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//esta lista maneja las 7 fichas que tendra cada jugador
+
 public class NodoListaFichas {
+    String Ficha;
+    NodoListaFichas siguiente;
     
+    //inicializo la variable y el nodo siguiente
+public void Fichas(String Ficha){
+    this.Ficha = Ficha;
+    this.siguiente = null;
+}
+    
+public void enlacesiguiente(NodoListaFichas x){
+     siguiente = x;
+}
+
+public NodoListaFichas obtenersiguiente(){
+    return siguiente;
+}
+    
+   
+     public String getFicha(){
+    return Ficha;
+    }
+    public void setFicha(String Ficha){
+    this.Ficha = Ficha;
+    }
+    
+   
+   
 }
