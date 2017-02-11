@@ -102,6 +102,12 @@ public class EDD_Practica1_201313692 {
         listacircular.MostrarLista();
         listacircular.eliminar(99);
         listacircular.MostrarLista();
-    }
     
+    
+    
+        inicio ventana1=new inicio();
+        ventana1.setVisible(true);
+    
+    }
+   
 }
