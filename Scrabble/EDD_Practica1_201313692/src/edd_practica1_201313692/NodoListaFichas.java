@@ -14,11 +14,13 @@ package edd_practica1_201313692;
 
 public class NodoListaFichas {
     String Ficha;
+    int valor;
     NodoListaFichas siguiente;
     
     //inicializo la variable y el nodo siguiente
-public void Fichas(String Ficha){
+public void Fichas(String Ficha,int valor){
     this.Ficha = Ficha;
+    this.valor=valor;
     this.siguiente = null;
 }
     
@@ -38,6 +40,12 @@ public NodoListaFichas obtenersiguiente(){
     this.Ficha = Ficha;
     }
     
+     public int getValor(){
+    return valor;
+    }
+    public void setValor(int valor){
+    this.valor = valor;
+    }
    
    
 }
