@@ -5,6 +5,13 @@
  */
 package edd_practica1_201313692;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author jossie
@@ -27,8 +34,34 @@ public class inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jFileChooser1 = new javax.swing.JFileChooser();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+
+        jDialog1.setMinimumSize(new java.awt.Dimension(600, 400));
+
+        jFileChooser1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFileChooser1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
+                .addGap(0, 20, Short.MAX_VALUE)
+                .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,8 +99,57 @@ public class inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //fileChooser ventana2=new fileChooser();
+       // ventana2.setVisible(true);
+          jDialog1.setVisible(true);       
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+File archivoSeleccionado;
+    private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
+       FileNameExtensionFilter filtro = new FileNameExtensionFilter("txt","txt");
+        int resultado;
+        JFileChooser selectorArchivo=(JFileChooser)evt.getSource();
+        String command=evt.getActionCommand();
+        String texto="";
+        String proyecto="";
+        if(command.equals(JFileChooser.APPROVE_SELECTION)){
+            archivoSeleccionado=selectorArchivo.getSelectedFile();
+            FileReader fr=null;
+            
+//            JOptionPane.showMessageDialog(this, "Ruta:"+archivoSeleccionado.getAbsolutePath()+
+//                    "\n Archivo:"+archivoSeleccionado.getName());
+            try{
+                  fr=new FileReader(archivoSeleccionado.toString());
+                  BufferedReader entrada=new BufferedReader(fr);
+                  String cadena=entrada.readLine();
+                  while(cadena!=null){
+                      //System.out.println(cadena);
+                      texto=cadena+"\n";
+                      proyecto=proyecto+texto;
+                      cadena=entrada.readLine();
+                      
+                  }
+                  //System.out.println("#########################################");
+                  //System.out.println(proyecto);
+           
+               System.out.println(proyecto);
+        }catch(Exception ex){
+
+           
+            JOptionPane.showMessageDialog(null, "Error abriendo la el archivo "+ ex);
+                 
+        }
+          
+            
+        }else if(command.equals(JFileChooser.CANCEL_SELECTION)){
+            JOptionPane.showMessageDialog(this, "selecciona un archivo...");
+        }
+
+        
+        
+        
+               
+    }//GEN-LAST:event_jFileChooser1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,5 +189,7 @@ public class inicio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JFileChooser jFileChooser1;
     // End of variables declaration//GEN-END:variables
 }
