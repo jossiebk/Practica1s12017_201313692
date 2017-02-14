@@ -11,7 +11,9 @@ import java.io.FileReader;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
+import org.xml.sax.*;
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
 /**
  *
  * @author jossie
@@ -115,7 +117,7 @@ File archivoSeleccionado;
         if(command.equals(JFileChooser.APPROVE_SELECTION)){
             archivoSeleccionado=selectorArchivo.getSelectedFile();
             FileReader fr=null;
-            
+            //System.out.println(archivoSeleccionado.toString());
 //            JOptionPane.showMessageDialog(this, "Ruta:"+archivoSeleccionado.getAbsolutePath()+
 //                    "\n Archivo:"+archivoSeleccionado.getName());
             try{
@@ -133,6 +135,9 @@ File archivoSeleccionado;
                   //System.out.println(proyecto);
            
                System.out.println(proyecto);
+               //String path="\""+archivoSeleccionado.toString()+"\"";
+               //System.out.println(path);
+              // carga(archivoSeleccionado.toString());
         }catch(Exception ex){
 
            
@@ -151,6 +156,9 @@ File archivoSeleccionado;
                
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
+    public void carga(String ruta){
+     
+    }
     /**
      * @param args the command line arguments
      */
@@ -192,4 +200,6 @@ File archivoSeleccionado;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFileChooser jFileChooser1;
     // End of variables declaration//GEN-END:variables
+
+   
 }
