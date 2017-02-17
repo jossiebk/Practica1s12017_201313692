@@ -22,8 +22,8 @@ public class ListaCircular {
     }
     
     //metodo para insertar
-    public ListaCircular Insertar(int elemento){
-        NodoCircular nuevo=new NodoCircular(elemento);
+    public ListaCircular Insertar(int elemento,String name){
+        NodoCircular nuevo=new NodoCircular(elemento,name);
         if(ultimo!=null){
             nuevo.siguiente=ultimo.siguiente;
             ultimo.siguiente=nuevo;
@@ -37,7 +37,7 @@ public class ListaCircular {
         NodoCircular aux=ultimo.siguiente;
         String cadena="";
         do{
-            cadena=cadena +"["+aux.dato+"]->";
+            cadena=cadena +"["+aux.dato+"-"+aux.nombre+"]->";
             aux=aux.siguiente;
         }while(aux!=ultimo.siguiente);
         System.out.println(cadena);

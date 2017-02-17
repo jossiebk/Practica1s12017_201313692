@@ -11,10 +11,12 @@ package edd_practica1_201313692;
  */
 public class NodoCircular {
     int dato;
+    String nombre;
     NodoCircular siguiente;
     
-    public NodoCircular(int d){
+    public NodoCircular(int d,String nombre){
         this.dato=d;
+        this.nombre=nombre;
         siguiente=this;
     }
     

@@ -14,12 +14,20 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import org.xml.sax.*;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
+
+
+
+
 /**
  *
  * @author jossie
  */
 public class inicio extends javax.swing.JFrame {
-
+    EDD_Practica1_201313692 test=new EDD_Practica1_201313692();
+    public static int TamañoMatriz;
+    String player="";
+    int jugadores=0;
+    ListaCircular listacircular=new ListaCircular();
     /**
      * Creates new form inicio
      */
@@ -75,6 +83,11 @@ public class inicio extends javax.swing.JFrame {
         });
 
         jButton2.setText("JUGAR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,7 +150,7 @@ File archivoSeleccionado;
                System.out.println(proyecto);
                //String path="\""+archivoSeleccionado.toString()+"\"";
                //System.out.println(path);
-              // carga(archivoSeleccionado.toString());
+               carga(archivoSeleccionado.toString());
         }catch(Exception ex){
 
            
@@ -156,9 +169,111 @@ File archivoSeleccionado;
                
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //selecciono una cantidad de jugadores para la partida
+        jugadores=Integer.parseInt(JOptionPane.showInputDialog("Cantidad de Jugadores"));
+        //ingreso los X jugadores nombre por nombre
+        for(int x=0;x<jugadores;x++){
+            player=JOptionPane.showInputDialog("Ingrese Nombre de Jugador");
+            //System.out.println("player "+(x+1)+": "+player);
+            listacircular.Insertar(x, player);
+        }
+        
+       listacircular.MostrarLista();
+       juego ventana2=new juego();
+       ventana2.setVisible(true);
+      dispose();
+       
+       
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     public void carga(String ruta){
-     
+        
+        try {
+            File inputFile=new File(ruta);
+            DocumentBuilderFactory dbFactory= DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder=dbFactory.newDocumentBuilder();
+            Document doc=dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            System.out.println("raiz: "+doc.getDocumentElement().getNodeName());
+            NodeList tamaño=doc.getElementsByTagName("scrabble");
+                 for(int temp=0;temp<tamaño.getLength();temp++){
+                Node nNode =tamaño.item(temp);
+                System.out.println("\nActual: "+nNode.getNodeName());
+                if(nNode.getNodeType()==Node.ELEMENT_NODE){
+                    Element eElement=(Element) nNode;
+                    String dimension=eElement.getElementsByTagName("dimension").item(0).getTextContent();
+                    //System.out.println("tamaño del arreglo: "+eElement.getElementsByTagName("dimension").item(0).getTextContent());
+                        TamañoMatriz=Integer.parseInt(dimension);
+                        System.out.println("tamaño de la matriz: "+TamañoMatriz);
+                }
+            
+            
+            }    
+            
+            //para cargar las casillas dobles
+            NodeList doble=doc.getElementsByTagName("casillas");
+            System.out.println("----------------------------");
+           // System.out.println(nList.getLength());
+            for(int temp=0;temp<doble.getLength();temp++){
+                Node nNode =doble.item(temp);
+                System.out.println("\nActual: "+nNode.getNodeName());
+                
+                if(nNode.getNodeType()==Node.ELEMENT_NODE){
+                    Element eElement=(Element) nNode;
+                    System.out.println("casilla X: "+eElement.getElementsByTagName("x").item(0).getTextContent()+" casilla Y: "+eElement.getElementsByTagName("y").item(0).getTextContent());
+                }
+            
+            
+            }
+           
+            //para cargar las casillas triples
+             NodeList triple=doc.getElementsByTagName("casilla");
+            System.out.println("----------------------------");
+           // System.out.println(nList.getLength());
+            for(int temp=0;temp<triple.getLength();temp++){
+                Node nNode =triple.item(temp);
+                System.out.println("\nActual: "+nNode.getNodeName());
+                
+                if(nNode.getNodeType()==Node.ELEMENT_NODE){
+                    Element eElement=(Element) nNode;
+                    System.out.println("casilla X: "+eElement.getElementsByTagName("x").item(0).getTextContent()+" casilla Y: "+eElement.getElementsByTagName("y").item(0).getTextContent());
+                }
+            
+            
+            }
+            
+            //para cargar todas las palabras del diccionario del XML
+            NodeList diccionario=doc.getElementsByTagName("palabra");
+            System.out.println("----------------------------");
+           // System.out.println(nList.getLength());
+           System.out.println("diccionario");
+            for(int temp=0;temp<diccionario.getLength();temp++){
+                Node nNode =diccionario.item(temp);
+               // System.out.println("\n actual: "+nNode.getNodeName());
+                NodoListaDiccionario palabra1 =new NodoListaDiccionario();
+                if(nNode.getNodeType()==Node.ELEMENT_NODE){
+                    Element eElement=(Element) nNode;
+                    //System.out.println("palabra: "+eElement.getElementsByTagName("palabra").item(0).getTextContent());
+                    //System.out.println(eElement.getChildNodes().item(0).getTextContent());
+                     String pal1 =eElement.getChildNodes().item(0).getTextContent();
+                     palabra1.setPalabra(pal1);
+                    test.listaD.push(palabra1);
+                }
+            
+            
+            }
+            
+            for(int y=0;y<test.listaD.size();y++){
+            System.out.println("palabra "+y+1+": "+test.listaD.buscar(y).getPalabra());
+        }
+            
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        
     }
+    
     /**
      * @param args the command line arguments
      */

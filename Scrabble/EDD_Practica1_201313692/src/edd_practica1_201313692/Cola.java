@@ -5,6 +5,9 @@
  */
 package edd_practica1_201313692;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 /**
  *
  * @author jossie
@@ -55,6 +58,29 @@ public class Cola {
     
     public int tamañoCola(){
         return tamaño;
+    }
+    
+    public void grafica(){
+    FileWriter fichero=null;
+    PrintWriter pw=null;
+    try{
+        fichero=new FileWriter("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\GraficaCola.dot");
+        pw=new PrintWriter(fichero);
+        pw.println("diagraph dibujo{");
+        pw.println("    rankdir=UD;");
+        pw.println("noce[shape=box];");
+        
+    }catch(Exception e){
+        e.printStackTrace();
+    }finally{
+        try{
+        if(null!=fichero)
+            fichero.close();
+        }catch(Exception e2){
+            e2.printStackTrace();
+        }
+    }
+    
     }
     
 }
