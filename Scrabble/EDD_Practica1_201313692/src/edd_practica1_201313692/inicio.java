@@ -8,6 +8,7 @@ package edd_practica1_201313692;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -28,11 +29,19 @@ public class inicio extends javax.swing.JFrame {
     String player="";
     int jugadores=0;
     ListaCircular listacircular=new ListaCircular();
+    
+    
+
+    
+    
     /**
      * Creates new form inicio
      */
     public inicio() {
         initComponents();
+         
+        
+        
     }
 
     /**
@@ -181,6 +190,7 @@ File archivoSeleccionado;
         
        listacircular.MostrarLista();
        juego ventana2=new juego();
+     
        ventana2.setVisible(true);
       dispose();
        

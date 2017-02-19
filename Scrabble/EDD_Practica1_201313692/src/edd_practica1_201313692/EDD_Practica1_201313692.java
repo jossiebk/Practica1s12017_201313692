@@ -96,6 +96,9 @@ public class EDD_Practica1_201313692 {
         listacircular.MostrarLista();
     
         */
+    
+    
+    
         int i=0,cantidad=95,rango=95;
         int arreglo[]=new int[cantidad];
         arreglo[i]=(int)(Math.random()*rango);
@@ -177,6 +180,15 @@ public class EDD_Practica1_201313692 {
             
         }
         
+        MatrizOrtogonal matriz=new MatrizOrtogonal();
+        
+        matriz.Insertar(new NodoMatriz(1,0,0));
+        matriz.Insertar(new NodoMatriz(1,0,3));
+        matriz.Insertar(new NodoMatriz(1,0,1));
+        matriz.Insertar(new NodoMatriz(1,0,5));
+        matriz.Insertar(new NodoMatriz(1,0,2));
+       
+        matriz.recorrer();
     
     
         inicio ventana1=new inicio();
