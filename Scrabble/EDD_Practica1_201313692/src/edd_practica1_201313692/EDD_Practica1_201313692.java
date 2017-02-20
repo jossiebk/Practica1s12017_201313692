@@ -180,17 +180,17 @@ public class EDD_Practica1_201313692 {
             
         }
         
-        MatrizOrtogonal matriz=new MatrizOrtogonal();
-        
-        matriz.Insertar(new NodoMatriz(1,0,0));
-        matriz.Insertar(new NodoMatriz(1,0,3));
-        matriz.Insertar(new NodoMatriz(1,0,1));
-        matriz.Insertar(new NodoMatriz(1,0,5));
-        matriz.Insertar(new NodoMatriz(1,0,2));
        
-        matriz.recorrer();
-    
-    
+        
+       MatrizOrtogonal matriz;
+       matriz=new MatrizOrtogonal();
+       
+       matriz.llenar(3, 3);
+     
+       //int dato=matriz.l.Buscar(0).Filas.primero.abajo.derecha.dato;
+       //int dato1=matriz.c.Buscar(0).Columna.primero.abajo.derecha.dato;
+        //System.out.println(dato+" "+dato1);
+        
         inicio ventana1=new inicio();
         ventana1.setVisible(true);
     

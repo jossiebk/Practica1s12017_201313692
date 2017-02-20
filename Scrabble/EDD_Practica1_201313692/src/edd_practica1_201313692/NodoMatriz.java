@@ -15,6 +15,8 @@ public class NodoMatriz {
     NodoMatriz abajo;
     NodoMatriz izquierda;
     NodoMatriz derecha;
+    NodoMatriz siguiente;
+    NodoMatriz anterior;
     
    //nodo de la matriz ortogonal  
      public NodoMatriz(int dato,int x, int y){
@@ -25,5 +27,10 @@ public class NodoMatriz {
         this. abajo=null;
         this.izquierda=null;
         this.derecha=null;
+        this.siguiente=null;
+        this.anterior=null;
     }
+     
+     
 }
+

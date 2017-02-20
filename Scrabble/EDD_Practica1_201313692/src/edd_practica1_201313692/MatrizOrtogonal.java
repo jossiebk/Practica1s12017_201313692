@@ -9,77 +9,56 @@ package edd_practica1_201313692;
  *
  * @author jossie
  */
+
 public class MatrizOrtogonal {
-    NodoMatriz ultimo,primero; //los nodos de mis "cabeceras o indicadores" verticales
-    int x; //para la cabecera
+    Cabeceras c;
+    Laterales l;
+ //Cabeceras cabecera=new Cabeceras(); 
+ //Laterales lateral=new Laterales();
+    MatrizOrtogonal(){
+        c=new Cabeceras();
+        l=new Laterales();
+    }
     
-    public MatrizOrtogonal(){
-   primero = null;
-   ultimo = null;
-   
-}
-    //metodo para insertar
-    public void Insertar(NodoMatriz inserta){
-        if(vacio()){
-            primero=ultimo=inserta;
-        }else{
-            if(inserta.y<primero.y){
-                insertarFrente(inserta);
-            }else if(inserta.y>ultimo.y){
-                insertarFinal(inserta);
-            }else{
-                insertarMedio(inserta);
+    void Insertar(int x,int y,int inserta){
+        NodoMatriz insercion;
+        insercion= new NodoMatriz(inserta,x,y);
+        if(c.existe(x)==false){
+           c.Insertar(new NodoCabecera(x));
+        }
+        if(l.existe(y)==false){
+           l.Insertar(new NodoLateral(y));
+        }
+        NodoCabecera CTemporal;
+        NodoLateral LTemporal;
+        CTemporal=c.Buscar(x);
+        LTemporal=l.Buscar(y);
+        CTemporal.Columna.Insertar(insercion);
+        LTemporal.Filas.InsertarCol(insercion);
+        System.out.println("inserto "+inserta+" en "+x+","+y);
+    }
+    
+    void llenar(int x,int y){
+        int o=0;
+        for(int j=0;j<y;j++){
+            for(int i=0;i<x;i++){
+                Insertar(i,j,o);
+                o++;
             }
         }
+    }
+    
+    void Buscar(){
+     
+    }
         
-    }
-    
-    //metodo para verificar si esta vacia la matriz
-    public boolean vacio(){
-        if(primero==null){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    
-    void insertarFrente(NodoMatriz inserta){
-        primero.arriba=inserta;
-        inserta.abajo=primero;
-        primero=primero.arriba;
-    }
-    
-    void insertarFinal(NodoMatriz inserta){
-        ultimo.abajo=inserta;
-        inserta.arriba=ultimo;
-        ultimo=ultimo.abajo;
-    }
-    
-    void insertarMedio(NodoMatriz inserta){
-        NodoMatriz temporal1;
-        NodoMatriz temporal2;
-        temporal1=primero;
-        while(temporal1.y<inserta.y){
-            temporal1=temporal1.abajo;
-        }
-        temporal2=temporal1.arriba;
-        temporal2.abajo=inserta;
-        temporal1.arriba=inserta;
-        inserta.abajo=temporal1;
-        inserta.arriba=temporal2;
         
-    }
-    
-    void recorrer(){
-        if(!vacio()){
-            NodoMatriz temporal=primero;
-            while(temporal!=null){
-                System.out.println("y= "+temporal.y);
-                temporal=temporal.abajo;
-        }
-        }
+       
         
-    }
+        //System.out.println("resultado= "+res);
+        
+    
+    
     
     
     
