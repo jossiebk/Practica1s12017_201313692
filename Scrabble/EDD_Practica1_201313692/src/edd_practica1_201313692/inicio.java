@@ -25,12 +25,12 @@ import javax.xml.parsers.*;
  */
 public class inicio extends javax.swing.JFrame {
     EDD_Practica1_201313692 test=new EDD_Practica1_201313692();
-    public static int TamañoMatriz;
+     int TamañoMatriz;
     String player="";
     int jugadores=0;
     ListaCircular listacircular=new ListaCircular();
     
-    
+      juego ventana2=new juego();
 
     
     
@@ -189,7 +189,7 @@ File archivoSeleccionado;
         }
         
        listacircular.MostrarLista();
-       juego ventana2=new juego();
+     
      
        ventana2.setVisible(true);
       dispose();
@@ -216,6 +216,7 @@ File archivoSeleccionado;
                     //System.out.println("tamaño del arreglo: "+eElement.getElementsByTagName("dimension").item(0).getTextContent());
                         TamañoMatriz=Integer.parseInt(dimension);
                         System.out.println("tamaño de la matriz: "+TamañoMatriz);
+                        ventana2.TamañoMatriz=TamañoMatriz;
                 }
             
             
