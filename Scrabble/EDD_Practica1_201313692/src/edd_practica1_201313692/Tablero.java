@@ -23,7 +23,7 @@ public class Tablero {
         entradas[x][y]= new JTextField(); 
         entradas[x][y].setBounds(4+(25*x),4+(25*y),25,25);
         entradas[x][y].setVisible(true);
-        entradas[x][y].setText("0");  
+        entradas[x][y].setText(" ");  
        jPanel6.add(entradas[x][y]);
      }
      }
