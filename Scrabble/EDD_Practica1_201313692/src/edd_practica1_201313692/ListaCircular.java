@@ -22,8 +22,8 @@ public class ListaCircular {
     }
     
     //metodo para insertar
-    public ListaCircular Insertar(int elemento,String name){
-        NodoCircular nuevo=new NodoCircular(elemento,name);
+    public ListaCircular Insertar(int elemento,String name,int score){
+        NodoCircular nuevo=new NodoCircular(elemento,name,score);
         if(ultimo!=null){
             nuevo.siguiente=ultimo.siguiente;
             ultimo.siguiente=nuevo;
@@ -42,6 +42,45 @@ public class ListaCircular {
         }while(aux!=ultimo.siguiente);
         System.out.println(cadena);
     }
+    
+     public String Recorrido(){
+        NodoCircular aux=ultimo.siguiente;
+        String cadena="";
+        do{
+            cadena=cadena +aux.nombre+"   -   "+aux.score+"\n";
+            aux=aux.siguiente;
+        }while(aux!=ultimo.siguiente);
+       // System.out.println(cadena);
+        return cadena;
+    }
+     
+     
+     public int Tamaño(){
+        NodoCircular aux=ultimo.siguiente;
+       int tamaño=0;
+        do{
+            aux=aux.siguiente;
+            tamaño++;
+        }while(aux!=ultimo.siguiente);
+       // System.out.println(cadena);
+        return tamaño;
+    }
+     
+     
+     
+     
+     public NodoCircular buscar(int index){
+    int contador =0;
+    NodoCircular temp= ultimo;
+    while(contador<index){
+       temp= temp.siguiente;
+       contador++;
+    }
+    return temp;
+}
+    
+    
+    
     
     //metodo para eliminar
     public boolean eliminar(int elemento){

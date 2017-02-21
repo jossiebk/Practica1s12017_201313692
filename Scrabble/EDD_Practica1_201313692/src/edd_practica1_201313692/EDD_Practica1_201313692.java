@@ -8,7 +8,8 @@ package edd_practica1_201313692;
 public class EDD_Practica1_201313692 {
  public static ListaFichas listaF = new ListaFichas();
  public static ListaDiccionario listaD = new ListaDiccionario();
- 
+ public static ListaCircular listacircular=new ListaCircular();
+ public static Cola colaFicha = new Cola();
     public static void main(String[] args) {
         
         NodoListaFichas pieza2 =new NodoListaFichas();
@@ -19,83 +20,7 @@ public class EDD_Practica1_201313692 {
         NodoListaDiccionario palabra3 =new NodoListaDiccionario();
            
         Cola colaFicha = new Cola();
-        /*for(int a=0;a<=12;a++){
-            colaFicha.Insertar(1,"A");
-        }
-        for(int a=0;a<=12;a++){
-            colaFicha.Insertar(1,"E");
-        }
-        for(int a=0;a<=9;a++){
-            colaFicha.Insertar(1,"O");
-        }*/
-        
-        
-       
-        
-        
-        /*
-        String ficha ="F";
-        pieza.setFicha(ficha);
-        listaF.push(pieza);
-        
-        
-        String ficha2 ="G";
-        pieza2.setFicha(ficha2);
-        listaF.push(pieza2);
-        
-        
-        String ficha3 ="T";
-        pieza3.setFicha(ficha3);
-        listaF.push(pieza3);
-        */
-        
-        
-        //for(int x=0;x<listaF.size();x++){
-          //  System.out.println("letra: "+listaF.buscar(x).getFicha()+" valor: "+listaF.buscar(x).getValor());
-        //}
-    
-     /*   System.out.println("---------------------------------------");
-        String pal1 ="Fuerte";
-        palabra1.setPalabra(pal1);
-        listaD.push(palabra1);
-        
-        
-        String pal2 ="Episodio";
-        palabra2.setPalabra(pal2);
-        listaD.push(palabra2);
-       
-        
-        String pal3 ="Triton";
-        palabra3.setPalabra(pal3);
-        listaD.push(palabra3);
-        
-        
-        
-        for(int y=0;y<listaD.size();y++){
-            System.out.println(listaD.buscar(y).getPalabra());
-        }
-        
-       */
-     
-    /*    ListaCircular listacircular=new ListaCircular();
-        listacircular.Insertar(3,"jossie");
-        listacircular.Insertar(13,":v asdf");
-        listacircular.Insertar(5,"trejo");
-        listacircular.Insertar(99,"disa");
-        listacircular.Insertar(56,"marellyn");
-        listacircular.Insertar(23,"chino");
-        listacircular.Insertar(69,"kath");
-        
-        listacircular.MostrarLista();
-    
-        listacircular.eliminar(23);
-        listacircular.MostrarLista();
-        listacircular.eliminar(5);
-        listacircular.MostrarLista();
-        listacircular.eliminar(99);
-        listacircular.MostrarLista();
-    
-        */
+      
     
     
     
@@ -168,17 +93,10 @@ public class EDD_Practica1_201313692 {
          System.out.println("ell tamaño es: "+colaFicha.tamañoCola());
         
         int a=colaFicha.tamañoCola()-1;
-        for(int x=0;x<=a;x++){
-            //NodoListaFichas pieza =new NodoListaFichas();
-            //System.out.println(colaFicha.Eliminar());
-            colaFicha.Eliminar();
-            System.out.println("pop: "+colaFicha.p+"--"+Integer.toString(colaFicha.r));
-           
-            //pieza.setFicha(colaFicha.p);
-            //pieza.setValor(colaFicha.r);
-           // listaF.push(pieza);
-            
-        }
+        //for(int x=0;x<=a;x++){
+          //  colaFicha.Eliminar();
+            //System.out.println("pop: "+colaFicha.p+"--"+Integer.toString(colaFicha.r));
+         //}
         
        
         

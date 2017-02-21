@@ -28,7 +28,7 @@ public class inicio extends javax.swing.JFrame {
      int TamañoMatriz;
     String player="";
     int jugadores=0;
-    ListaCircular listacircular=new ListaCircular();
+    
     
       juego ventana2=new juego();
 
@@ -184,12 +184,16 @@ File archivoSeleccionado;
         //ingreso los X jugadores nombre por nombre
         for(int x=0;x<jugadores;x++){
             player=JOptionPane.showInputDialog("Ingrese Nombre de Jugador");
-            //System.out.println("player "+(x+1)+": "+player);
-            listacircular.Insertar(x, player);
+            System.out.println("player "+(x+1)+": "+player);
+            test.listacircular.Insertar(x, player,0);
+          
         }
         
-       listacircular.MostrarLista();
-     
+      // test.listacircular.MostrarLista();
+//       for(int x=0;x<test.listacircular.)
+System.out.println("########################33");
+      // System.out.println(test.listacircular.Recorrido());
+       
      
        ventana2.setVisible(true);
       dispose();
