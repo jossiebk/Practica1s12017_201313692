@@ -11,6 +11,7 @@ package edd_practica1_201313692;
  */
 public class NodoMatriz {
     int dato,x,y;
+    String ficha;
     NodoMatriz arriba;
     NodoMatriz abajo;
     NodoMatriz izquierda;
@@ -19,8 +20,9 @@ public class NodoMatriz {
     NodoMatriz anterior;
     
    //nodo de la matriz ortogonal  
-     public NodoMatriz(int dato,int x, int y){
+     public NodoMatriz(int dato,int x, int y,String ficha){
         this.dato=dato;
+        this.ficha=ficha;
         this.x=x;
         this.y=y;
         this.arriba = null;

@@ -10,17 +10,44 @@ public class EDD_Practica1_201313692 {
  public static ListaDiccionario listaD = new ListaDiccionario();
  public static ListaCircular listacircular=new ListaCircular();
  public static Cola colaFicha = new Cola();
+   
+       public static MatrizOrtogonal matriz=new MatrizOrtogonal();
     public static void main(String[] args) {
         
+        NodoListaFichas pieza1 =new NodoListaFichas();
         NodoListaFichas pieza2 =new NodoListaFichas();
-        NodoListaFichas pieza3 =new NodoListaFichas();
+         NodoListaFichas pieza3 =new NodoListaFichas();
+        NodoListaFichas pieza4 =new NodoListaFichas();
+         NodoListaFichas pieza5 =new NodoListaFichas();
+        NodoListaFichas pieza6 =new NodoListaFichas();
            
         NodoListaDiccionario palabra1 =new NodoListaDiccionario();
         NodoListaDiccionario palabra2 =new NodoListaDiccionario();
         NodoListaDiccionario palabra3 =new NodoListaDiccionario();
            
-        Cola colaFicha = new Cola();
+        
       
+        pieza1.setFicha("F");
+        pieza1.setValor(1);
+        listaF.push(pieza1);
+        pieza2.setFicha("G");
+        pieza2.setValor(1);
+        listaF.push(pieza2);
+         pieza3.setFicha("E");
+         pieza3.setValor(1);
+         listaF.push(pieza3);
+        pieza4.setFicha("Q");
+        pieza4.setValor(1);
+        listaF.push(pieza4);
+         pieza5.setFicha("P");
+         pieza5.setValor(1);
+         listaF.push(pieza5);
+        pieza6.setFicha("Y");
+        pieza6.setValor(1);
+        listaF.push(pieza6);
+        
+        
+        
     
     
     
@@ -37,73 +64,127 @@ public class EDD_Practica1_201313692 {
         }
        for(int k=0;k<cantidad;k++){
            //System.out.print((k+1)+".-"+arreglo[k]+"\n");
+            NodoCola fich =new NodoCola();
             if(arreglo[k]<12){
-                 colaFicha.Insertar(1,"A");
+                fich.setFicha("A");
+                fich.setValor(1);
+                colaFicha.push(fich);
             }else if(arreglo[k]>11 && arreglo[k]<24){
-                 colaFicha.Insertar(1,"E");
+                  fich.setFicha("E");
+                fich.setValor(1);
+                colaFicha.push(fich);
             }else if(arreglo[k]>23 && arreglo[k]<33){
-                 colaFicha.Insertar(1,"O");
+                  fich.setFicha("O");
+                fich.setValor(1);
+                colaFicha.push(fich);
             }else if(arreglo[k]>32 && arreglo[k]<39){
-                 colaFicha.Insertar(1,"I");
+                  fich.setFicha("I");
+                fich.setValor(1);
+                colaFicha.push(fich);
             }else if(arreglo[k]>38 && arreglo[k]<45){
-                 colaFicha.Insertar(1,"S");
+                  fich.setFicha("S");
+                fich.setValor(1);
+                colaFicha.push(fich);
             }else if(arreglo[k]>44 && arreglo[k]<50){
-                 colaFicha.Insertar(1,"N");
+                  fich.setFicha("N");
+                fich.setValor(1);
+                colaFicha.push(fich);
             }else if(arreglo[k]>49 && arreglo[k]<54){
-                 colaFicha.Insertar(1,"L");
+                  fich.setFicha("L");
+                fich.setValor(1);
+                colaFicha.push(fich);
             }else if(arreglo[k]>53 && arreglo[k]<59){
-                 colaFicha.Insertar(1,"R");
+                  fich.setFicha("R");
+                fich.setValor(1);
+                colaFicha.push(fich);
             }else if(arreglo[k]>58 && arreglo[k]<64){
-                 colaFicha.Insertar(1,"U");
+                  fich.setFicha("U");
+                fich.setValor(1);
+                colaFicha.push(fich);
             }else if(arreglo[k]>63 && arreglo[k]<68){
-                 colaFicha.Insertar(1,"T");
+                  fich.setFicha("T");
+                fich.setValor(1);
+                colaFicha.push(fich);
             }else if(arreglo[k]>67 && arreglo[k]<73){
-                 colaFicha.Insertar(2,"D");
+                  fich.setFicha("D");
+                fich.setValor(2);
+                colaFicha.push(fich);
             }else if(arreglo[k]>72 && arreglo[k]<75){
-                 colaFicha.Insertar(2,"G");
+                  fich.setFicha("G");
+                fich.setValor(2);
+                colaFicha.push(fich);
             }else if(arreglo[k]>74 && arreglo[k]<79){
-                 colaFicha.Insertar(3,"C");
+                  fich.setFicha("C");
+                fich.setValor(3);
+                colaFicha.push(fich);
             }else if(arreglo[k]>78 && arreglo[k]<81){
-                 colaFicha.Insertar(3,"B");
+                  fich.setFicha("B");
+                fich.setValor(3);
+                colaFicha.push(fich);
             }else if(arreglo[k]>80 && arreglo[k]<83){
-                 colaFicha.Insertar(3,"M");
+                  fich.setFicha("M");
+                fich.setValor(3);
+                colaFicha.push(fich);
             }else if(arreglo[k]>82 && arreglo[k]<85){
-                 colaFicha.Insertar(3,"P");
+                  fich.setFicha("P");
+                fich.setValor(3);
+                colaFicha.push(fich);
             }else if(arreglo[k]>84 && arreglo[k]<87){
-                 colaFicha.Insertar(4,"H");
+                 fich.setFicha("H");
+                fich.setValor(4);
+                colaFicha.push(fich);
             }else if(arreglo[k]>86 && arreglo[k]<88){
-                 colaFicha.Insertar(4,"F");
+                  fich.setFicha("F");
+                fich.setValor(4);
+                colaFicha.push(fich);
             }else if(arreglo[k]>87 && arreglo[k]<89){
-                 colaFicha.Insertar(4,"V");
+                  fich.setFicha("V");
+                fich.setValor(4);
+                colaFicha.push(fich);
             }else if(arreglo[k]>88 && arreglo[k]<90){
-                 colaFicha.Insertar(4,"Y");
+                  fich.setFicha("Y");
+                fich.setValor(4);
+                colaFicha.push(fich);
             }else if(arreglo[k]>89 && arreglo[k]<91){
-                 colaFicha.Insertar(5,"Q");
+                  fich.setFicha("Q");
+                fich.setValor(5);
+                colaFicha.push(fich);
             }else if(arreglo[k]>90 && arreglo[k]<92){
-                 colaFicha.Insertar(8,"J");
+                  fich.setFicha("J");
+                fich.setValor(8);
+                colaFicha.push(fich);
             }else if(arreglo[k]>91 && arreglo[k]<93){
-                 colaFicha.Insertar(8,"Ñ");
+                  fich.setFicha("Ñ");
+                fich.setValor(8);
+                colaFicha.push(fich);
             }else if(arreglo[k]>92 && arreglo[k]<94){
-                 colaFicha.Insertar(8,"X");
+                 fich.setFicha("X");
+                fich.setValor(8);
+                colaFicha.push(fich);
             }else if(arreglo[k]>93 && arreglo[k]<95){
-                 colaFicha.Insertar(10,"Z");
+                  fich.setFicha("Z");
+                fich.setValor(10);
+                colaFicha.push(fich);
             }
        }
+       
+       
         
-         System.out.println("ell tamaño es: "+colaFicha.tamañoCola());
-        
-        int a=colaFicha.tamañoCola()-1;
-        //for(int x=0;x<=a;x++){
+         System.out.println("ell tamaño es: "+colaFicha.size());
+       
+         
+         
+        int a=colaFicha.size()-1;
+        for(int x=0;x<=a;x++){
           //  colaFicha.Eliminar();
-            //System.out.println("pop: "+colaFicha.p+"--"+Integer.toString(colaFicha.r));
-         //}
+            System.out.println("pop: "+colaFicha.buscar(x).getFicha()+"--"+Integer.toString(colaFicha.buscar(x).getValor()));
+         }
         
        
         
-       MatrizOrtogonal matriz;
-       matriz=new MatrizOrtogonal();
+     
        
-       matriz.llenar(3, 3);
+       //matriz.llenar(3, 3);
      
        //int dato=matriz.l.Buscar(0).Filas.primero.abajo.derecha.dato;
        //int dato1=matriz.c.Buscar(0).Columna.primero.abajo.derecha.dato;

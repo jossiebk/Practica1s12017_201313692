@@ -236,7 +236,11 @@ System.out.println("########################33");
                 
                 if(nNode.getNodeType()==Node.ELEMENT_NODE){
                     Element eElement=(Element) nNode;
-                    System.out.println("casilla X: "+eElement.getElementsByTagName("x").item(0).getTextContent()+" casilla Y: "+eElement.getElementsByTagName("y").item(0).getTextContent());
+                    String a=eElement.getElementsByTagName("x").item(0).getTextContent();
+                    String b=eElement.getElementsByTagName("y").item(0).getTextContent();
+                    test.matriz.Insertar(Integer.parseInt(a), Integer.parseInt(b), 3,"DOBLE");
+                    System.out.println("casilla X: "+a+" casilla Y: "+b);
+                    
                 }
             
             
@@ -252,11 +256,15 @@ System.out.println("########################33");
                 
                 if(nNode.getNodeType()==Node.ELEMENT_NODE){
                     Element eElement=(Element) nNode;
-                    System.out.println("casilla X: "+eElement.getElementsByTagName("x").item(0).getTextContent()+" casilla Y: "+eElement.getElementsByTagName("y").item(0).getTextContent());
+                    String a=eElement.getElementsByTagName("x").item(0).getTextContent();
+                    String b=eElement.getElementsByTagName("y").item(0).getTextContent();
+                    test.matriz.Insertar(Integer.parseInt(a), Integer.parseInt(b), 3,"TRIPLE");
+                    System.out.println("casilla X: "+a+" casilla Y: "+b);
                 }
             
             
             }
+            
             
             //para cargar todas las palabras del diccionario del XML
             NodeList diccionario=doc.getElementsByTagName("palabra");
@@ -278,7 +286,7 @@ System.out.println("########################33");
             
             
             }
-            
+            test.matriz.llenar(TamañoMatriz, TamañoMatriz);
             for(int y=0;y<test.listaD.size();y++){
             System.out.println("palabra "+y+1+": "+test.listaD.buscar(y).getPalabra());
         }

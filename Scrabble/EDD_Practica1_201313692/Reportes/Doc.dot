@@ -1,0 +1,32 @@
+digraph G {
+	node[shape=record]; 
+
+	subgraph clusterDLL {
+
+label = "Lista de objetos";
+
+tn_dll0[label = "{ <e> | hola| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll1[label = "{ <e> |  mundo| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll0:p -> tn_dll1:e;
+tn_dll2[label = "{ <e> |  como| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll1:p -> tn_dll2:e;
+tn_dll3[label = "{ <e> |  estas| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll2:p -> tn_dll3:e;
+tn_dll4[label = "{ <e> |  uno| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll3:p -> tn_dll4:e;
+tn_dll5[label = "{ <e> |  dos| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll4:p -> tn_dll5:e;
+tn_dll6[label = "{ <e> |  tres| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll5:p -> tn_dll6:e;
+tn_dll7[label = "{ <e> |  universidad| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll6:p -> tn_dll7:e;
+tn_dll8[label = "{ <e> |  practica| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll7:p -> tn_dll8:e;
+tn_dll9[label = "{ <e> |  primera| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll8:p -> tn_dll9:e;
+tn_dll10[label = "{ <e> |  correo| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll9:p -> tn_dll10:e;
+tn_dll11[label = "{ <e> |  juego| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll10:p -> tn_dll11:e;
+	}
+ }

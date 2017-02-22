@@ -5,7 +5,9 @@
  */
 package edd_practica1_201313692;
 
+import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
@@ -13,74 +15,129 @@ import java.io.PrintWriter;
  * @author jossie
  */
 public class Cola {
-    NodoCola inicio, fin;
-    int tamaño;
-    //inicializo los punteros
-    public Cola(){
-        inicio=fin=null;
-        tamaño=0;
-    }
-    //retorno verdadero si el inicio aun es nulo osea no tengo nada ahi
-    public boolean Vacia(){
-        return inicio==null;
-    }
+         private FileWriter fileWriter = null;
+    private PrintWriter printWriter = null;
+    NodoCola inicio,  fin;
+    int size;
     
-    public void Insertar(int elemento,String fi){
-        //creo un nuevo objeto del tipo del nodo
-        NodoCola nuevo=new NodoCola(elemento,fi);
-        //si la cola esta vacia el inicio sera el elemento que vino
-        if(Vacia()){
-            inicio=nuevo;
-        }else{
-            fin.siguiente=nuevo;
+    
+// este metodo sera el constructor de mi lista    
+public Cola(){
+   inicio = null;
+   fin = null;
+   size =0;
+}    
+
+// con este metodo agregare datos a la lista
+public void push(NodoCola ficha){
+   if(fin == null){
+      fin= ficha;
+      inicio = fin;
+   }else{
+      fin.siguiente = ficha;
+      fin = fin.siguiente;
+   }
+  size++;
+}
+
+public NodoCola buscar(int index){
+    int contador =0;
+    NodoCola temp= inicio;
+    while(contador<index){
+       temp= temp.obtenersiguiente();
+       contador++;
+    }
+    return temp;
+}
+
+
+public void eliminar(int index){
+   if(index==0){
+       inicio = inicio.obtenersiguiente();
+    }else{
+        int contador = 0;
+        NodoCola temporal = inicio;
+        while(contador < index-1){
+             temporal = temporal.obtenersiguiente();
+             contador++;
         }
-        fin=nuevo;
-        tamaño++;
+     temporal.enlacesiguiente(temporal.obtenersiguiente().obtenersiguiente());
     }
-    
-    String p="";
-    int r;
-    public String Eliminar(){
-        String aux=inicio.ficha;
-        p=aux;
-        int aux2=inicio.dato;
-        inicio=inicio.siguiente;
-        tamaño--;
-        r=aux2;
-        return aux;
-    }
-    
-    
-    
-    public int inicioCola(){
-        return inicio.dato;
-    }
-    
-    public int tamañoCola(){
-        return tamaño;
-    }
-    
-    public void grafica(){
-    FileWriter fichero=null;
-    PrintWriter pw=null;
-    try{
-        fichero=new FileWriter("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\GraficaCola.dot");
-        pw=new PrintWriter(fichero);
-        pw.println("diagraph dibujo{");
-        pw.println("    rankdir=UD;");
-        pw.println("noce[shape=box];");
-        
-    }catch(Exception e){
-        e.printStackTrace();
-    }finally{
-        try{
-        if(null!=fichero)
-            fichero.close();
-        }catch(Exception e2){
-            e2.printStackTrace();
+   size--;
+}
+
+
+
+public int size(){
+   return size;
+}
+
+
+public boolean vacia(){
+   if(fin== null){
+      return true;
+   }else{
+      return false;
+   }
+}
+
+public void Graficar(){
+        NodoCola auxNode = this.inicio;
+        try {
+            File directorio = new File(".\\Reportes");
+            if(!directorio.exists()){
+                directorio.mkdirs();
+            }
+            fileWriter = new FileWriter(".\\Reportes\\cola.dot");
+            printWriter = new PrintWriter(fileWriter);
+                    
+             printWriter.println("digraph G {");
+            // printWriter.println("\trankdir = LR;\n");
+             printWriter.println("\tnode[shape=record]; \n");
+             printWriter.println("\tsubgraph clusterDLL {\n");
+             printWriter.println("label = \"Cola Fichas\";\n");
+             int count = 0;
+                String color = "skyblue";
+                for(int x=0;x<size()-1;x++){
+                    if(count > 0){
+                        printWriter.print("tn_dll" + count + "[label = \"{ <e> |  " + buscar(x).getFicha() + "| <p> }\", style=\"filled\", color=\"black\", fillcolor=\"" + color + "\"]; \n");
+                        if(count == 1){
+                            printWriter.print("tn_dll0:p -> tn_dll1:e;\n");
+                            //printWriter.print("tn_dll1:e -> tn_dll0:p;\n");
+                        }else{
+                            printWriter.print("tn_dll" + (count - 1) + ":p -> tn_dll"+ count + ":e;\n");
+                            //printWriter.print("tn_dll" + count + ":e -> tn_dll" + (count - 1) + ":p;\n");
+                        }
+                    }else{
+                        printWriter.print("tn_dll" + count + "[label = \"{ <e> | " + buscar(x).getFicha() +  "| <p> }\", style=\"filled\", color=\"black\", fillcolor=\"" + color + "\"]; \n");
+                    }
+                    count++;
+                    auxNode = auxNode.siguiente;
+                }
+                printWriter.print("\t}\n");
+                printWriter.print(" }");
+                printWriter.close();
+                String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";
+                String fileInputPath = ".\\Reportes\\cola.dot";
+                String fileOutputPath = ".\\Reportes\\cola.jpg";
+                String tParam = "-Tjpg";
+                String tOParam = "-o";
+                
+                String[] cmd = new String[5];
+                cmd[0] = dotPath;
+                cmd[1] = tParam;
+                cmd[2] = fileInputPath;
+                cmd[3] = tOParam;
+                cmd[4] = fileOutputPath;
+                
+                Runtime rt = Runtime.getRuntime();
+                rt.exec(cmd);
+        } catch (IOException ex) {
+            //Logger.getLogger(DoublyLinkedList.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
-    }
+
+
+
+}
     
 }

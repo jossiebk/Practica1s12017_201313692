@@ -20,9 +20,9 @@ public class MatrizOrtogonal {
         l=new Laterales();
     }
     
-    void Insertar(int x,int y,int inserta){
+    void Insertar(int x,int y,int inserta,String ficha){
         NodoMatriz insercion;
-        insercion= new NodoMatriz(inserta,x,y);
+        insercion= new NodoMatriz(inserta,x,y,ficha);
         if(c.existe(x)==false){
            c.Insertar(new NodoCabecera(x));
         }
@@ -35,14 +35,15 @@ public class MatrizOrtogonal {
         LTemporal=l.Buscar(y);
         CTemporal.Columna.Insertar(insercion);
         LTemporal.Filas.InsertarCol(insercion);
-        System.out.println("inserto "+inserta+" en "+x+","+y);
+        System.out.println("inserto "+inserta+" en "+x+","+y+" con: "+ficha);
     }
     
     void llenar(int x,int y){
         int o=0;
+        String b="";
         for(int j=0;j<y;j++){
             for(int i=0;i<x;i++){
-                Insertar(i,j,o);
+                Insertar(i,j,o,b);
                 o++;
             }
         }
@@ -51,7 +52,9 @@ public class MatrizOrtogonal {
     void Buscar(){
      
     }
-        
+       
+    
+    
         
        
         

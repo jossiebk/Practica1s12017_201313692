@@ -1,0 +1,20 @@
+digraph G {
+	node[shape=record]; 
+
+	subgraph clusterDLL {
+
+label = "Lista de objetos";
+
+tn_dll0[label = "{ <e> | F| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll1[label = "{ <e> |  G| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll0:p -> tn_dll1:e;
+tn_dll2[label = "{ <e> |  E| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll1:p -> tn_dll2:e;
+tn_dll3[label = "{ <e> |  Q| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll2:p -> tn_dll3:e;
+tn_dll4[label = "{ <e> |  P| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll3:p -> tn_dll4:e;
+tn_dll5[label = "{ <e> |  Y| <p> }", style="filled", color="black", fillcolor="skyblue"]; 
+tn_dll4:p -> tn_dll5:e;
+	}
+ }
