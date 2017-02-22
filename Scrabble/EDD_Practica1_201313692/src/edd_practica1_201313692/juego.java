@@ -30,9 +30,9 @@ public class juego extends javax.swing.JFrame {
        int TamañoMatriz;
     JTextField entradas_global[][]; //referencias globales para la matris de Jtextfield  que retorna el metodo crea cuadros
    Label etiquetas_global[][];     //referencias globales para la matris de labels que retorna el metodo crea cuadros2
-   int turno=1;
+   int turno;
    Tablero  acciones = new Tablero();// objeto de la clase creacciones, el cual nos permite poder utilizar los metodo que estan en la misma.
-     int tamaño;
+     int tamaño=0;
      int game=1;
      String jugadores="";
      //entradas_global = acciones.crea_cuadros(TamañoMatriz,this.jPanel1);
@@ -444,6 +444,35 @@ public class juego extends javax.swing.JFrame {
          
          test.listaD.Graficar();
         test.listacircular.Graficar();
+        
+        for(int x=0;x<7;x++){
+            if(x==0){
+                jButton8.setText(test.listaF.buscar(x).getFicha());
+            }else if(x==1){
+                jButton10.setText(test.listaF.buscar(x).getFicha());
+            }else if(x==2){
+                jButton11.setText(test.listaF.buscar(x).getFicha());
+            }
+            else if(x==3){
+                jButton12.setText(test.listaF.buscar(x).getFicha());
+            }else if(x==4){
+                jButton13.setText(test.listaF.buscar(x).getFicha());
+            }else if(x==5){
+                jButton14.setText(test.listaF.buscar(x).getFicha());
+            }else if(x==6){
+                jButton9.setText(test.listaF.buscar(x).getFicha());
+            }
+            
+        }
+        jCheckBox1.setText(test.colaFicha.buscar(0).getFicha());
+        jCheckBox2.setText(test.colaFicha.buscar(1).getFicha());
+        jCheckBox3.setText(test.colaFicha.buscar(2).getFicha());
+        jCheckBox4.setText(test.colaFicha.buscar(3).getFicha());
+        jCheckBox5.setText(test.colaFicha.buscar(4).getFicha());
+        jCheckBox6.setText(test.colaFicha.buscar(5).getFicha());
+        jCheckBox7.setText(test.colaFicha.buscar(6).getFicha());
+        
+        
          
          
          //jCheckBox1.setText();
@@ -470,16 +499,213 @@ public class juego extends javax.swing.JFrame {
            
         if(turno==test.listacircular.Tamaño()){    
         jLabel8.setText(test.listacircular.buscar(turno).nombre);
-            turno=1;
+            
+            jButton8.setText("");
+            jButton9.setText("");
+            jButton10.setText("");
+            jButton11.setText("");
+            jButton12.setText("");
+            jButton13.setText("");
+            jButton14.setText("");
+            ran(turno);
+            System.out.println("turno "+turno);
+            turno=0;
         }else{
             jLabel8.setText(test.listacircular.buscar(turno).nombre);
+            jButton8.setText("");
+            jButton9.setText("");
+            jButton10.setText("");
+            jButton11.setText("");
+            jButton12.setText("");
+            jButton13.setText("");
+            jButton14.setText("");
+            ran(turno);
+            System.out.println("turno "+turno);
             turno++;
         }
+        
+        
             
             
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void ran(int pivote){
+        
+        if(pivote==0){
+            for(int x=0;x<7;x++){
+                if(x==0){
+                    jButton8.setText(test.listaF.buscar(x).getFicha());
+                }else if(x==1){
+                    jButton10.setText(test.listaF.buscar(x).getFicha());
+                }else if(x==2){
+                    jButton11.setText(test.listaF.buscar(x).getFicha());
+                }
+                else if(x==3){
+                    jButton12.setText(test.listaF.buscar(x).getFicha());
+                }else if(x==4){
+                    jButton13.setText(test.listaF.buscar(x).getFicha());
+                }else if(x==5){
+                    jButton14.setText(test.listaF.buscar(x).getFicha());
+                }else if(x==6){
+                    jButton9.setText(test.listaF.buscar(x).getFicha());
+                }
+            }
+        }else if(pivote==1){
+            for(int x=0;x<7;x++){
+                if(x==0){
+                    jButton8.setText(test.listaF1.buscar(x).getFicha());
+                }else if(x==1){
+                    jButton10.setText(test.listaF1.buscar(x).getFicha());
+                }else if(x==2){
+                    jButton11.setText(test.listaF1.buscar(x).getFicha());
+                }
+                else if(x==3){
+                    jButton12.setText(test.listaF1.buscar(x).getFicha());
+                }else if(x==4){
+                    jButton13.setText(test.listaF1.buscar(x).getFicha());
+                }else if(x==5){
+                    jButton14.setText(test.listaF1.buscar(x).getFicha());
+                }else if(x==6){
+                    jButton9.setText(test.listaF1.buscar(x).getFicha());
+                }
+            }
+        }else if(pivote==2){
+            for(int x=0;x<7;x++){
+                if(x==0){
+                    jButton8.setText(test.listaF2.buscar(x).getFicha());
+                }else if(x==1){
+                    jButton10.setText(test.listaF2.buscar(x).getFicha());
+                }else if(x==2){
+                    jButton11.setText(test.listaF2.buscar(x).getFicha());
+                }
+                else if(x==3){
+                    jButton12.setText(test.listaF2.buscar(x).getFicha());
+                }else if(x==4){
+                    jButton13.setText(test.listaF2.buscar(x).getFicha());
+                }else if(x==5){
+                    jButton14.setText(test.listaF2.buscar(x).getFicha());
+                }else if(x==6){
+                    jButton9.setText(test.listaF2.buscar(x).getFicha());
+                }
+            }
+        }else if(pivote==3){
+            for(int x=0;x<7;x++){
+                if(x==0){
+                    jButton8.setText(test.listaF3.buscar(x).getFicha());
+                }else if(x==1){
+                    jButton10.setText(test.listaF3.buscar(x).getFicha());
+                }else if(x==2){
+                    jButton11.setText(test.listaF3.buscar(x).getFicha());
+                }
+                else if(x==3){
+                    jButton12.setText(test.listaF3.buscar(x).getFicha());
+                }else if(x==4){
+                    jButton13.setText(test.listaF3.buscar(x).getFicha());
+                }else if(x==5){
+                    jButton14.setText(test.listaF3.buscar(x).getFicha());
+                }else if(x==6){
+                    jButton9.setText(test.listaF3.buscar(x).getFicha());
+                }
+            }
+        }else if(pivote==4){
+            for(int x=0;x<7;x++){
+                if(x==0){
+                    jButton8.setText(test.listaF4.buscar(x).getFicha());
+                }else if(x==1){
+                    jButton10.setText(test.listaF4.buscar(x).getFicha());
+                }else if(x==2){
+                    jButton11.setText(test.listaF4.buscar(x).getFicha());
+                }
+                else if(x==3){
+                    jButton12.setText(test.listaF4.buscar(x).getFicha());
+                }else if(x==4){
+                    jButton13.setText(test.listaF4.buscar(x).getFicha());
+                }else if(x==5){
+                    jButton14.setText(test.listaF4.buscar(x).getFicha());
+                }else if(x==6){
+                    jButton9.setText(test.listaF4.buscar(x).getFicha());
+                }
+            }
+        }else if(pivote==5){
+            for(int x=0;x<7;x++){
+                if(x==0){
+                    jButton8.setText(test.listaF5.buscar(x).getFicha());
+                }else if(x==1){
+                    jButton10.setText(test.listaF5.buscar(x).getFicha());
+                }else if(x==2){
+                    jButton11.setText(test.listaF5.buscar(x).getFicha());
+                }
+                else if(x==3){
+                    jButton12.setText(test.listaF5.buscar(x).getFicha());
+                }else if(x==4){
+                    jButton13.setText(test.listaF5.buscar(x).getFicha());
+                }else if(x==5){
+                    jButton14.setText(test.listaF5.buscar(x).getFicha());
+                }else if(x==6){
+                    jButton9.setText(test.listaF5.buscar(x).getFicha());
+                }
+            }
+        }else if(pivote==6){
+            for(int x=0;x<7;x++){
+                if(x==0){
+                    jButton8.setText(test.listaF6.buscar(x).getFicha());
+                }else if(x==1){
+                    jButton10.setText(test.listaF6.buscar(x).getFicha());
+                }else if(x==2){
+                    jButton11.setText(test.listaF6.buscar(x).getFicha());
+                }
+                else if(x==3){
+                    jButton12.setText(test.listaF6.buscar(x).getFicha());
+                }else if(x==4){
+                    jButton13.setText(test.listaF6.buscar(x).getFicha());
+                }else if(x==5){
+                    jButton14.setText(test.listaF6.buscar(x).getFicha());
+                }else if(x==6){
+                    jButton9.setText(test.listaF6.buscar(x).getFicha());
+                }
+            }
+        }else if(pivote==7){
+            for(int x=0;x<7;x++){
+                if(x==0){
+                    jButton8.setText(test.listaF7.buscar(x).getFicha());
+                }else if(x==1){
+                    jButton10.setText(test.listaF7.buscar(x).getFicha());
+                }else if(x==2){
+                    jButton11.setText(test.listaF7.buscar(x).getFicha());
+                }
+                else if(x==3){
+                    jButton12.setText(test.listaF7.buscar(x).getFicha());
+                }else if(x==4){
+                    jButton13.setText(test.listaF7.buscar(x).getFicha());
+                }else if(x==5){
+                    jButton14.setText(test.listaF7.buscar(x).getFicha());
+                }else if(x==6){
+                    jButton9.setText(test.listaF7.buscar(x).getFicha());
+                }
+            }
+        }else if(pivote==8){
+            for(int x=0;x<7;x++){
+                if(x==0){
+                    jButton8.setText(test.listaF8.buscar(x).getFicha());
+                }else if(x==1){
+                    jButton10.setText(test.listaF8.buscar(x).getFicha());
+                }else if(x==2){
+                    jButton11.setText(test.listaF8.buscar(x).getFicha());
+                }
+                else if(x==3){
+                    jButton12.setText(test.listaF8.buscar(x).getFicha());
+                }else if(x==4){
+                    jButton13.setText(test.listaF8.buscar(x).getFicha());
+                }else if(x==5){
+                    jButton14.setText(test.listaF8.buscar(x).getFicha());
+                }else if(x==6){
+                    jButton9.setText(test.listaF8.buscar(x).getFicha());
+                }
+            }
+        }
+    }
+    
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
          test.listaD.Graficar();
         ImageIcon image= new ImageIcon("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\Scrabble\\EDD_Practica1_201313692\\Reportes\\Doc.jpg");
@@ -488,11 +714,7 @@ public class juego extends javax.swing.JFrame {
         this.repaint();
         
         
-         test.listaF.Graficar();
-        ImageIcon image2= new ImageIcon("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\Scrabble\\EDD_Practica1_201313692\\Reportes\\Fichitas.jpg");
-        Icon icono2= new ImageIcon(image2.getImage().getScaledInstance(jLabel10.getWidth(), jLabel10.getHeight(), Image.SCALE_DEFAULT));
-        jLabel10.setIcon(icono2);
-        this.repaint();
+         
         
        System.out.println("$$$$$$$$$$$$$$"+ test.colaFicha.size());
         
@@ -507,6 +729,90 @@ public class juego extends javax.swing.JFrame {
         Icon icono4= new ImageIcon(image4.getImage().getScaledInstance(jLabel11.getWidth(), jLabel11.getHeight(), Image.SCALE_DEFAULT));
         jLabel11.setIcon(icono4);
         this.repaint();
+        
+        
+        if(turno==0){
+            test.listaF.Graficar();
+            ImageIcon image2= new ImageIcon("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\Scrabble\\EDD_Practica1_201313692\\Reportes\\Fichitas.jpg");
+            Icon icono2= new ImageIcon(image2.getImage().getScaledInstance(jLabel10.getWidth(), jLabel10.getHeight(), Image.SCALE_DEFAULT));
+            jLabel10.setIcon(icono2);
+            for(int x=0;x<7;x++){
+            System.out.println(test.listaF.buscar(x));
+            }
+            this.repaint();
+        }else if(turno==1){
+             test.listaF1.Graficar();
+             for(int x=0;x<7;x++){
+            System.out.println(test.listaF1.buscar(x));
+            }
+            ImageIcon image2= new ImageIcon("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\Scrabble\\EDD_Practica1_201313692\\Reportes\\Fichitas.jpg");
+            Icon icono2= new ImageIcon(image2.getImage().getScaledInstance(jLabel10.getWidth(), jLabel10.getHeight(), Image.SCALE_DEFAULT));
+            jLabel10.setIcon(icono2);
+            this.repaint();
+        }else if(turno==2){
+            for(int x=0;x<7;x++){
+            System.out.println(test.listaF2.buscar(x));
+            }
+             test.listaF2.Graficar();
+            ImageIcon image2= new ImageIcon("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\Scrabble\\EDD_Practica1_201313692\\Reportes\\Fichitas.jpg");
+            Icon icono2= new ImageIcon(image2.getImage().getScaledInstance(jLabel10.getWidth(), jLabel10.getHeight(), Image.SCALE_DEFAULT));
+            jLabel10.setIcon(icono2);
+            this.repaint();
+        }else if(turno==3){
+             test.listaF3.Graficar();
+            ImageIcon image2= new ImageIcon("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\Scrabble\\EDD_Practica1_201313692\\Reportes\\Fichitas.jpg");
+            Icon icono2= new ImageIcon(image2.getImage().getScaledInstance(jLabel10.getWidth(), jLabel10.getHeight(), Image.SCALE_DEFAULT));
+            jLabel10.setIcon(icono2);
+            for(int x=0;x<7;x++){
+            System.out.println(test.listaF3.buscar(x));
+            }
+            this.repaint();
+        }else if(turno==4){
+            for(int x=0;x<7;x++){
+            System.out.println(test.listaF4.buscar(x));
+            }
+             test.listaF4.Graficar();
+            ImageIcon image2= new ImageIcon("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\Scrabble\\EDD_Practica1_201313692\\Reportes\\Fichitas.jpg");
+            Icon icono2= new ImageIcon(image2.getImage().getScaledInstance(jLabel10.getWidth(), jLabel10.getHeight(), Image.SCALE_DEFAULT));
+            jLabel10.setIcon(icono2);
+            this.repaint();
+        }else if(turno==5){
+            for(int x=0;x<7;x++){
+            System.out.println(test.listaF5.buscar(x));
+            }
+             test.listaF5.Graficar();
+            ImageIcon image2= new ImageIcon("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\Scrabble\\EDD_Practica1_201313692\\Reportes\\Fichitas.jpg");
+            Icon icono2= new ImageIcon(image2.getImage().getScaledInstance(jLabel10.getWidth(), jLabel10.getHeight(), Image.SCALE_DEFAULT));
+            jLabel10.setIcon(icono2);
+            this.repaint();
+        }else if(turno==6){
+            for(int x=0;x<7;x++){
+            System.out.println(test.listaF6.buscar(x));
+            }
+             test.listaF6.Graficar();
+            ImageIcon image2= new ImageIcon("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\Scrabble\\EDD_Practica1_201313692\\Reportes\\Fichitas.jpg");
+            Icon icono2= new ImageIcon(image2.getImage().getScaledInstance(jLabel10.getWidth(), jLabel10.getHeight(), Image.SCALE_DEFAULT));
+            jLabel10.setIcon(icono2);
+            this.repaint();
+        }else if(turno==7){
+            for(int x=0;x<7;x++){
+            System.out.println(test.listaF7.buscar(x));
+            }
+             test.listaF7.Graficar();
+            ImageIcon image2= new ImageIcon("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\Scrabble\\EDD_Practica1_201313692\\Reportes\\Fichitas.jpg");
+            Icon icono2= new ImageIcon(image2.getImage().getScaledInstance(jLabel10.getWidth(), jLabel10.getHeight(), Image.SCALE_DEFAULT));
+            jLabel10.setIcon(icono2);
+            this.repaint();
+        }else if(turno==8){
+            for(int x=0;x<7;x++){
+            System.out.println(test.listaF8.buscar(x));
+            }
+             test.listaF8.Graficar();
+            ImageIcon image2= new ImageIcon("C:\\Users\\jossie\\Documents\\GitHub\\Practica1s12017_201313692\\Scrabble\\EDD_Practica1_201313692\\Reportes\\Fichitas.jpg");
+            Icon icono2= new ImageIcon(image2.getImage().getScaledInstance(jLabel10.getWidth(), jLabel10.getHeight(), Image.SCALE_DEFAULT));
+            jLabel10.setIcon(icono2);
+            this.repaint();
+        }
         
         
 // jPanel1.add

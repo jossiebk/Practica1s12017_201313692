@@ -7,6 +7,18 @@ package edd_practica1_201313692;
  */
 public class EDD_Practica1_201313692 {
  public static ListaFichas listaF = new ListaFichas();
+  public static ListaFichas listaF1 = new ListaFichas();
+   public static ListaFichas listaF2 = new ListaFichas();
+    public static ListaFichas listaF3 = new ListaFichas();
+     public static ListaFichas listaF4 = new ListaFichas();
+      public static ListaFichas listaF5 = new ListaFichas();
+       public static ListaFichas listaF6 = new ListaFichas();
+   public static ListaFichas listaF7 = new ListaFichas();
+    public static ListaFichas listaF8 = new ListaFichas();
+     public static ListaFichas listaF9 = new ListaFichas();
+      public static ListaFichas listaF10 = new ListaFichas();
+  
+  
  public static ListaDiccionario listaD = new ListaDiccionario();
  public static ListaCircular listacircular=new ListaCircular();
  public static Cola colaFicha = new Cola();
@@ -27,6 +39,8 @@ public class EDD_Practica1_201313692 {
            
         
       
+        /*
+        NodoListaFichas pieza1 =new NodoListaFichas();
         pieza1.setFicha("F");
         pieza1.setValor(1);
         listaF.push(pieza1);
@@ -47,7 +61,7 @@ public class EDD_Practica1_201313692 {
         listaF.push(pieza6);
         
         
-        
+        */
     
     
     
@@ -179,6 +193,8 @@ public class EDD_Practica1_201313692 {
           //  colaFicha.Eliminar();
             System.out.println("pop: "+colaFicha.buscar(x).getFicha()+"--"+Integer.toString(colaFicha.buscar(x).getValor()));
          }
+        
+        
         
        
         

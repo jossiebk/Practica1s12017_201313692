@@ -52,9 +52,7 @@ public class MatrizOrtogonal {
     void Buscar(){
      
     }
-       
-    
-    
+        
         
        
         

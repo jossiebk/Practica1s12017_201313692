@@ -182,12 +182,95 @@ File archivoSeleccionado;
         //selecciono una cantidad de jugadores para la partida
         jugadores=Integer.parseInt(JOptionPane.showInputDialog("Cantidad de Jugadores"));
         //ingreso los X jugadores nombre por nombre
+        
         for(int x=0;x<jugadores;x++){
             player=JOptionPane.showInputDialog("Ingrese Nombre de Jugador");
             System.out.println("player "+(x+1)+": "+player);
             test.listacircular.Insertar(x, player,0);
           
         }
+        
+        //NodoListaFichas pieza1 =new NodoListaFichas();
+       
+        
+        for(int x=0;x<jugadores;x++){
+            if(x==0){
+                for(int y=0;y<7;y++){
+                    NodoListaFichas pieza =new NodoListaFichas();
+                    pieza.setFicha(test.colaFicha.buscar(0).getFicha());
+                    pieza.setValor(test.colaFicha.buscar(0).getValor());
+                    test.listaF.push(pieza);
+                    test.colaFicha.eliminar(0);
+                }
+            }else if(x==1){
+                for(int y=0;y<7;y++){
+                    NodoListaFichas pieza =new NodoListaFichas();
+                    pieza.setFicha(test.colaFicha.buscar(0).getFicha());
+                    pieza.setValor(test.colaFicha.buscar(0).getValor());
+                    test.listaF1.push(pieza);
+                    test.colaFicha.eliminar(0);
+                }
+            }else if(x==2){
+                for(int y=0;y<7;y++){
+                    NodoListaFichas pieza =new NodoListaFichas();
+                    pieza.setFicha(test.colaFicha.buscar(0).getFicha());
+                    pieza.setValor(test.colaFicha.buscar(0).getValor());
+                    test.listaF2.push(pieza);
+                    test.colaFicha.eliminar(0);
+                }
+            }else if(x==3){
+                for(int y=0;y<7;y++){
+                    NodoListaFichas pieza =new NodoListaFichas();
+                    pieza.setFicha(test.colaFicha.buscar(0).getFicha());
+                    pieza.setValor(test.colaFicha.buscar(0).getValor());
+                    test.listaF3.push(pieza);
+                    test.colaFicha.eliminar(0);
+                }
+            }else if(x==4){
+                for(int y=0;y<7;y++){
+                    NodoListaFichas pieza =new NodoListaFichas();
+                    pieza.setFicha(test.colaFicha.buscar(0).getFicha());
+                    pieza.setValor(test.colaFicha.buscar(0).getValor());
+                    test.listaF4.push(pieza);
+                    test.colaFicha.eliminar(0);
+                }
+            }else if(x==5){
+                for(int y=0;y<7;y++){
+                    NodoListaFichas pieza =new NodoListaFichas();
+                    pieza.setFicha(test.colaFicha.buscar(0).getFicha());
+                    pieza.setValor(test.colaFicha.buscar(0).getValor());
+                    test.listaF5.push(pieza);
+                    test.colaFicha.eliminar(0);
+                }
+            }else if(x==6){
+                for(int y=0;y<7;y++){
+                    NodoListaFichas pieza =new NodoListaFichas();
+                    pieza.setFicha(test.colaFicha.buscar(0).getFicha());
+                    pieza.setValor(test.colaFicha.buscar(0).getValor());
+                    test.listaF6.push(pieza);
+                    test.colaFicha.eliminar(0);
+                }
+            }else if(x==7){
+                for(int y=0;y<7;y++){
+                    NodoListaFichas pieza =new NodoListaFichas();
+                    pieza.setFicha(test.colaFicha.buscar(0).getFicha());
+                    pieza.setValor(test.colaFicha.buscar(0).getValor());
+                    test.listaF7.push(pieza);
+                    test.colaFicha.eliminar(0);
+                }
+            }else if(x==8){
+                for(int y=0;y<7;y++){
+                    NodoListaFichas pieza =new NodoListaFichas();
+                    pieza.setFicha(test.colaFicha.buscar(0).getFicha());
+                    pieza.setValor(test.colaFicha.buscar(0).getValor());
+                    test.listaF8.push(pieza);
+                    test.colaFicha.eliminar(0);
+                }
+            }
+        }
+        
+        
+        
         
       // test.listacircular.MostrarLista();
 //       for(int x=0;x<test.listacircular.)
